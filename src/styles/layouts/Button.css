@@ -1,0 +1,80 @@
+/* ============================================================
+   TRACKGYM - COMPONENTE DE BOTÃO RESPONSIVO
+   ============================================================ */
+
+/* Usar "button.btnTrackGym" aumenta a especificidade para vencer conflitos com o index.css */
+button.btnTrackGym {
+  position: relative;
+  /* Padding usa 'em' para que o botão cresça proporcionalmente se você mudar o font-size */
+  padding: 0.8em 1.8em; 
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; /* Tamanho base para desktop */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  
+  /* Reset de bordas e estilos nativos do navegador ou index.css */
+  border: none !important;
+  border-radius: 10px; /* Alinhado à curvatura da logo TrackGym */
+  
+  /* Transição suave para efeitos de hover e cliques */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  
+  /* Alinhamento flexível para aceitar ícones e texto internamente */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaçamento automático entre ícone e texto */
+  
+  /* Estética Neon Sólida (Padrão) */
+  background-color: #00f2ff !important;
+  color: #05070a !important; /* Texto escuro para contraste no fundo ciano */
+  box-shadow: 0 0 12px rgba(0, 242, 255, 0.3);
+  
+}
+
+/* EFEITOS DE INTERAÇÃO */
+button.btnTrackGym:hover {
+  /* Efeito de elevação (lift) para feedback visual de profundidade */
+  transform: translateY(-2px);
+  /* Intensificação do brilho neon no hover */
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+  background-color: #00e5f2 !important;
+}
+
+button.btnTrackGym:active {
+  /* Simula a pressão do clique físico */
+  transform: translateY(1px);
+}
+
+/* VARIANTE SECUNDÁRIA (Outline/Borda) - Ideal para ações menos importantes */
+button.btnTrackGym.secondary {
+  background-color: transparent !important;
+  color: #00f2ff !important;
+  border: 2px solid #00f2ff !important;
+  box-shadow: none;
+}
+
+button.btnTrackGym.secondary:hover {
+  background-color: rgba(0, 242, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* ESTILO PARA ÍCONES NEON (SVG ou Fontes de Ícone) */
+.icon-neon {
+  color: #00f2ff;
+  /* O drop-shadow cria a aura de luz ao redor do desenho do ícone */
+  filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.8));
+}
+
+/* RESPONSIVIDADE DO BOTÃO */
+@media (max-width: 768px) {
+  button.btnTrackGym {
+    /* No celular, o botão fica um pouco menor para economizar espaço horizontal */
+    font-size: 13px;
+    padding: 0.7em 1.5em;
+    /* Facilita o toque em telas menores (Touch Target) */
+    min-height: 44px;
+  }
+}

@@ -1,0 +1,68 @@
+/* ============================================================
+   TRACKGYM - GLOBAL DESIGN SYSTEM & RESPONSIVE LAYOUT
+   ============================================================ */
+
+:root {
+  /* 1. PALETA DE CORES (Obsidian & Neon) */
+  --bg-deep: #05070a;            /* Preto absoluto das bordas */
+  --bg-light: #0d141f;           /* Azul profundo do centro */
+  --neon-cyan: #00f2ff;          /* Ciano base */
+  --neon-glow: rgba(0, 242, 255, 0.4); 
+  
+  /* 2. TEXTO E CONTRASTE */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  
+  /* 3. ESPAÇAMENTO E BORDAS */
+  --radius-main: 12px;           /* Padrão Squircle iOS */
+  --container-gap: 5%;           /* Espaçamento lateral dinâmico */
+}
+
+/* 4. PADRÃO DE TÍTULOS */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.brand-name span {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 15px var(--neon-glow);
+}
+
+
+
+
+/* ==================================
+    RESPONSIVIDADE EXTRA
+   ================================== */
+/* Aqui é onde você faz ajustes gerais do app, não só da navbar */
+
+@media (max-width: 1024px) {
+  :root {
+    --container-max: 980px; /* só deixa mais “confortável” */
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    /* reduz espaçamento geral no mobile */
+    --space-6: 26px;
+    --space-5: 20px;
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
