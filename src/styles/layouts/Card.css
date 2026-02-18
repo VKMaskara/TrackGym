@@ -1,0 +1,67 @@
+/* Card.css */
+:root {
+  --tg-bg-card: #1a1a1a;
+  --tg-border-color: #333;
+  --tg-text-main: #ffffff;
+  --tg-primary-neon: #00e5ff; /* Azul Neon */
+  --tg-success-neon: #00ff88; /* Verde Neon */
+  --tg-radius: 16px;
+  --tg-transition: 0.3s ease;
+}
+
+.tg-card {
+  background-color: var(--tg-bg-card);
+  border: 1px solid var(--tg-border-color);
+  border-radius: var(--tg-radius);
+  color: var(--tg-text-main);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Garante que o conteúdo não saia das bordas arredondadas */
+  transition: transform var(--tg-transition), box-shadow var(--tg-transition);
+}
+
+.tg-card--hover:hover {
+  transform: translateY(-4px); /* Leve elevação */
+}
+
+.tg-card--clickable {
+  cursor: pointer;
+}
+
+.tg-card--clickable:active {
+  transform: scale(0.98); /* Efeito de "apertar" o botão */
+}
+
+/* Variantes de Cor */
+.tg-card--primary {
+  border-color: var(--tg-primary-neon);
+}
+
+.tg-card--success {
+  border-color: var(--tg-success-neon);
+}
+
+/* Opcional: Um brilho interno sutil para as variantes */
+.tg-card--primary, .tg-card--success {
+  box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.05);
+}
+
+.tg-card__header {
+  padding: inherit; /* Segue o padding definido no Card pai */
+  border-bottom: 1px solid var(--tg-border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tg-card__body {
+  padding: inherit;
+  flex: 1; /* Ocupa o espaço restante */
+}
+
+.tg-card__footer {
+  padding: inherit;
+  border-top: 1px solid var(--tg-border-color);
+  font-size: 0.875rem;
+  color: #888;
+}
